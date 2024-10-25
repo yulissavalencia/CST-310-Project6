@@ -3,7 +3,6 @@ out vec4 FragColor;
 
 in vec3 Normal;  
 in vec3 FragPos;  
-  
 
 uniform vec3 lightPos; 
 uniform vec3 viewPos; 
@@ -11,11 +10,10 @@ uniform vec3 lightColor;
 uniform vec3 objectColor;
 uniform float shiny;
 
-
 void main()
 {
-  // ambient
-    float ambientStrength = 0.0;
+    // ambient
+    float ambientStrength = 0.2;  // Change this to 0.1 or 0.2
     vec3 ambient = ambientStrength * lightColor;
   	
     // diffuse 
@@ -33,4 +31,5 @@ void main()
         
     vec3 result = (ambient + diffuse + specular) * objectColor;
     FragColor = vec4(result, 1.0);
-} 
+}
+
